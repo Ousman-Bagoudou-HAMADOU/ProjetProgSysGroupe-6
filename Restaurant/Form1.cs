@@ -282,5 +282,27 @@ namespace Restaurant
             client2.Connect(adip, Convert.ToInt32(adport));
             client3.Connect(adip, Convert.ToInt32(adport));
         }
+
+        private void Client_DataReceived(object sender, SimpleTCP.Message e)
+        {
+            object ob = new object();
+            EventArgs ev = new EventArgs();
+            if (e.MessageString == "Cuisine!!")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button5_Click_1(ob, ev);
+            }
+            if (e.MessageString == "Nappe")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button8_Click(ob, ev);
+            }
+            if (e.MessageString == "NappeOK!!")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button8_Click(ob, ev);
+            }
+        }
+
     }
 }
