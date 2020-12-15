@@ -81,11 +81,7 @@ namespace Cuisine
                 if(okc == 2)
                 {
                     cc.Abort();
-                }
-                //MessageBox.Show("Vous avez envoyé La  du client");
-                //txtStatus.Text += e.MessageString;
-               
-                //e.ReplyLine(string.Format("Cuisine!!"));
+                } 
                 
                  
             }
