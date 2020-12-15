@@ -313,6 +313,65 @@ namespace Cuisine
             });
             tre.Start();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Thread cc = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+                    for (int pp = 0; pp <= 500; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 50; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
+                        ChefCuisine.Location = new Point(ChefCuisine.Location.X, ChefCuisine.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 30; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 215; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 470; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 25; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 73; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+
+                    for (int pp = 0; pp <= 25; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    for (int pp = 0; pp <= 550; pp++)
+                    {
+                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
+                        System.Threading.Thread.Sleep(tmp);
+                    }
+                    np = 1;
+                });
+            });
+            cc.Start();
+        }
     }
 
     private void Server_DataReceived(object sender, SimpleTCP.Message e)
@@ -403,73 +462,7 @@ namespace Cuisine
         {
             if (server.IsStarted)
                 server.Stop();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Thread cc = new Thread(() =>
-            {
-                this.BeginInvoke((Action)delegate ()
-                {
-                    for (int pp = 0; pp <= 500; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 50; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
-                        ChefCuisine.Location = new Point(ChefCuisine.Location.X, ChefCuisine.Location.Y - 1);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 30; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y + 1);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 215; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 470; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 25; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y + 1);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 73; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y);
-                        System.Threading.Thread.Sleep(tmp);
-                    } 
-
-                    for (int pp = 0; pp <= 25; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y - 1);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    for (int pp = 0; pp <= 550; pp++)
-                    {
-                        Plongeur.Location = new Point(Plongeur.Location.X - 1, Plongeur.Location.Y);
-                        System.Threading.Thread.Sleep(tmp);
-                    }
-                    np = 1; 
-                });
-            });
-            cc.Start();
-
-            
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
+        } 
     }
 }
 
