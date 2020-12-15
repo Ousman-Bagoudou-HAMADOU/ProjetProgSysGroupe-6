@@ -248,24 +248,30 @@ namespace Restaurant
                         picCS.Location = new Point(picCS.Location.X + 1, picCS.Location.Y);
                         System.Threading.Thread.Sleep(tmps);
                     }
-                    //Axe X- 
-
-
-
-
-
-
-
-
-
-
-
-
-
                 });
             });
 
             debut.Start();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
