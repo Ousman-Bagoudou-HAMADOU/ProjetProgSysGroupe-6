@@ -289,8 +289,8 @@ namespace Restaurant
             //String adip = "192.168.43.15";
             String adip = "127.0.0.1";
             String adport = "8910";
-          //  client2.Connect(adip, Convert.ToInt32(adport));
-          //  client3.Connect(adip, Convert.ToInt32(adport));
+            client2.Connect(adip, Convert.ToInt32(adport));
+            client3.Connect(adip, Convert.ToInt32(adport));
         }
 
         private void Client_DataReceived(object sender, SimpleTCP.Message e)
