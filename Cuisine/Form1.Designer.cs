@@ -95,6 +95,7 @@ namespace Cuisine
             this.button2.TabIndex = 46;
             this.button2.Text = "Fermer";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -104,6 +105,7 @@ namespace Cuisine
             this.button1.TabIndex = 45;
             this.button1.Text = "Commencer";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 

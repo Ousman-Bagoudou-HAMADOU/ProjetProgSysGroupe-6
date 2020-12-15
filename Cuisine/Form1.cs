@@ -49,112 +49,17 @@ namespace Cuisine
             System.Net.IPAddress ip = System.Net.IPAddress.Parse(adip);
             server.Start(ip, Convert.ToInt32(adport));
         }
-    }
-
-    private void Server_DataReceived(object sender, SimpleTCP.Message e)
-        {
-            //MessageBox.Show("vs avez " + e.MessageString);
-            EventArgs fe = new EventArgs();
-            object ty = new object();
-            String tth = e.MessageString.Remove(5);
-            if(tth == "temps")
-            {
-                int rrt = e.MessageString.Length;
-                String ttht = e.MessageString.Remove(0, 5);
-                int tte = ttht.Length;
-                String yyt = ttht.Remove(tte - 1);
-                //MessageBox.Show("contenu: " + yyt);
-                int t = Convert.ToInt32(yyt);
-                tmp = t;
-                e.ReplyLine(string.Format(""));
-            }
-            else if (e.MessageString == "CommandeClient")
-            {
-                button1_Click(ty, fe);
-                Thread cc = new Thread(() =>
-                {
-                    this.BeginInvoke((Action)delegate ()
-                    {
-                        while (System.Threading.Thread.CurrentThread.IsAlive)
-                        {
-                            if (okc == 1)
-                            {
-                                e.ReplyLine(string.Format("Cuisine!!"));
-                                okc = 2;
-                            }
-                        }
-
-
-                    });
-                });
-                cc.Start();
-                if(okc == 2)
-                {
-                    cc.Abort();
-                }
-                //MessageBox.Show("Vous avez envoyé La  du client");
-                //txtStatus.Text += e.MessageString;
-               
-                //e.ReplyLine(string.Format("Cuisine!!"));
-                
-                 
-            }
-            else if (e.MessageString == "Nappe")
-            {
-                button3_Click(ty, fe);
-                Thread nnp = new Thread(() =>
-                {
-                    this.BeginInvoke((Action)delegate ()
-                    {
-                        while (System.Threading.Thread.CurrentThread.IsAlive)
-                        {
-                            if (np == 1)
-                            {
-                                e.ReplyLine(string.Format("NappeOK!!"));
-                                np = 2;
-                            }
-                        }
-
-
-                    });
-                });
-                nnp.Start();
-                if (np == 2)
-                {
-                    nnp.Abort();
-                }
-                //MessageBox.Show("Vous avez envoyé La  du client");
-                //txtStatus.Text += e.MessageString;
-
-                //e.ReplyLine(string.Format("Cuisine!!"));
-
-
-            }
-            else
-            {
-                MessageBox.Show("Vous avez envoyé " + e.MessageString);
-            }
-        }
-        
-        
-        
-        private void Cuisine_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        
-
         private void button1_Click(object sender, EventArgs e)
         {
             Thread tre = new Thread(() =>
             {
-                this.BeginInvoke((Action)delegate (){
+                this.BeginInvoke((Action)delegate () {
                     for (int px = ChefCuisine.Location.X; px <= 500; px++)
                     {
 
@@ -193,7 +98,7 @@ namespace Cuisine
                     }
 
                     //Deplacement du commis de cuisine vers le chef de partie + Rencontre
-                    Console.WriteLine("Le commis de cuisine se déplace également pour rencontrer le chef de partie");                    
+                    Console.WriteLine("Le commis de cuisine se déplace également pour rencontrer le chef de partie");
                     for (int pp = 0; pp <= 45; pp++)
                     {
                         ChefPartie.Location = new Point(ChefPartie.Location.X + 1, ChefPartie.Location.Y);
@@ -255,7 +160,7 @@ namespace Cuisine
                     System.Threading.Thread.Sleep(tmp);
                     Console.WriteLine("Le chef de cuisine donne les assiettes sales aux plongeur");
                     System.Threading.Thread.Sleep(tmp + tmpajt);
-                    
+
                     for (int pp = 0; pp <= 15; pp++)
                     {
                         CommisCuisine.Location = new Point(CommisCuisine.Location.X - 1, CommisCuisine.Location.Y - 1);
@@ -285,7 +190,7 @@ namespace Cuisine
                         Plongeur.Location = new Point(Plongeur.Location.X + 1, Plongeur.Location.Y + 1);
                         System.Threading.Thread.Sleep(tmp);
                     }
-                     
+
                     for (int pp = 0; pp <= 50; pp++)
                     {
                         CommisCuisine.Location = new Point(CommisCuisine.Location.X - 1, CommisCuisine.Location.Y);
@@ -301,7 +206,7 @@ namespace Cuisine
                     }
 
                     Console.WriteLine("Le commis continue toujours son chemin");
-                    
+
                     for (int pp = 0; pp <= 330; pp++)
                     {
                         CommisCuisine.Location = new Point(CommisCuisine.Location.X - 1, CommisCuisine.Location.Y);
@@ -401,46 +306,99 @@ namespace Cuisine
                         System.Threading.Thread.Sleep(tmp);
                     }*/
 
-                    
+
                 });
-                
+
 
             });
             tre.Start();
-            
         }
+    }
 
-        private void fontDialog1_Apply(object sender, EventArgs e)
+    private void Server_DataReceived(object sender, SimpleTCP.Message e)
         {
+            //MessageBox.Show("vs avez " + e.MessageString);
+            EventArgs fe = new EventArgs();
+            object ty = new object();
+            String tth = e.MessageString.Remove(5);
+            if(tth == "temps")
+            {
+                int rrt = e.MessageString.Length;
+                String ttht = e.MessageString.Remove(0, 5);
+                int tte = ttht.Length;
+                String yyt = ttht.Remove(tte - 1);
+                //MessageBox.Show("contenu: " + yyt);
+                int t = Convert.ToInt32(yyt);
+                tmp = t;
+                e.ReplyLine(string.Format(""));
+            }
+            else if (e.MessageString == "CommandeClient")
+            {
+                button1_Click(ty, fe);
+                Thread cc = new Thread(() =>
+                {
+                    this.BeginInvoke((Action)delegate ()
+                    {
+                        while (System.Threading.Thread.CurrentThread.IsAlive)
+                        {
+                            if (okc == 1)
+                            {
+                                e.ReplyLine(string.Format("Cuisine!!"));
+                                okc = 2;
+                            }
+                        }
 
-        }
 
-        private void label_Click(object sender, EventArgs e)
-        {
+                    });
+                });
+                cc.Start();
+                if(okc == 2)
+                {
+                    cc.Abort();
+                }
+                //MessageBox.Show("Vous avez envoyé La  du client");
+                //txtStatus.Text += e.MessageString;
+               
+                //e.ReplyLine(string.Format("Cuisine!!"));
+                
+                 
+            }
+            else if (e.MessageString == "Nappe")
+            {
+                button3_Click(ty, fe);
+                Thread nnp = new Thread(() =>
+                {
+                    this.BeginInvoke((Action)delegate ()
+                    {
+                        while (System.Threading.Thread.CurrentThread.IsAlive)
+                        {
+                            if (np == 1)
+                            {
+                                e.ReplyLine(string.Format("NappeOK!!"));
+                                np = 2;
+                            }
+                        }
 
-        }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            
-        }
+                    });
+                });
+                nnp.Start();
+                if (np == 2)
+                {
+                    nnp.Abort();
+                }
+                //MessageBox.Show("Vous avez envoyé La  du client");
+                //txtStatus.Text += e.MessageString;
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-           
+                //e.ReplyLine(string.Format("Cuisine!!"));
 
-        }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+            }
+            else
+            {
+                MessageBox.Show("Vous avez envoyé " + e.MessageString);
+            }
+        }   
         private void btnStop_Click(object sender, EventArgs e)
         {
             if (server.IsStarted)
