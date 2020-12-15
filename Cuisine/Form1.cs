@@ -43,7 +43,8 @@ namespace Cuisine
             server.Delimiter = 0x13; //enter 
             server.StringEncoder = Encoding.UTF8;
             server.DataReceived += Server_DataReceived;
-            String adip = "192.168.43.217";
+            //String adip = "192.168.43.217";
+            String adip = "127.0.0.1";
             String adport = "8910";
             //txtStatus.Text += "Server starting...";
             System.Net.IPAddress ip = System.Net.IPAddress.Parse(adip);
