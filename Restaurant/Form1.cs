@@ -353,5 +353,130 @@ namespace Restaurant
 
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Thread dpct = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+
+                    Console.WriteLine("Départ du client");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    //Axe Y-
+                    for (int py = 0; py <= 60; py++)
+                    {
+                        pic.Location = new Point(pic.Location.X, pic.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+
+                    //Axe X-
+                    for (int px = 0; px <= 245; px++)
+                    {
+                        pic.Location = new Point(pic.Location.X - 1, pic.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int px = 0; px <= 80; px++)
+                    {
+                        picMH.Location = new Point(picMH.Location.X + 1, picMH.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int px = 0; px <= 80; px++)
+                    {
+                        picMH.Location = new Point(picMH.Location.X - 1, picMH.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    button10_Click(sender, e);
+                });
+            });
+            dpct.Start(); 
+        }
+
+      
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Thread depotnap = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+                    for (int p = 0; p <= 150; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 170; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 35; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 160; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 133; p++)
+                    {
+
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                });
+            });
+            depotnap.Start();
+            
+        }
+
+        
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Thread dpcr = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+                    for (int p = 0; p <= 133; p++)
+                    {
+                        pic.Location = new Point(pic.Location.X - 1, pic.Location.Y - 1);
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 78; p++)
+                    {
+
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 75; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 35; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 170; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 150; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    envoinapp();
+
+                });
+            });
+            dpcr.Start();
+        }
+
     }
 }
