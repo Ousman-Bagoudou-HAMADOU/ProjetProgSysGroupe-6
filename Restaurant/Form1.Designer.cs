@@ -29,6 +29,7 @@ namespace Restaurant
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -191,6 +192,7 @@ namespace Restaurant
             // 
             // picCR
             // 
+            this.picCR.Image = ((System.Drawing.Image)(resources.GetObject("picCR.Image")));
             this.picCR.Location = new System.Drawing.Point(230, 23);
             this.picCR.Name = "picCR";
             this.picCR.Size = new System.Drawing.Size(39, 31);
@@ -275,6 +277,7 @@ namespace Restaurant
             // 
             // picMH
             // 
+            this.picMH.Image = ((System.Drawing.Image)(resources.GetObject("picMH.Image")));
             this.picMH.Location = new System.Drawing.Point(95, 208);
             this.picMH.Name = "picMH";
             this.picMH.Size = new System.Drawing.Size(39, 31);
@@ -284,7 +287,8 @@ namespace Restaurant
             // 
             // picSR
             // 
-            this.picSR.Location = new System.Drawing.Point(230, 117);
+            this.picSR.Image = ((System.Drawing.Image)(resources.GetObject("picSR.Image")));
+            this.picSR.Location = new System.Drawing.Point(230, 108);
             this.picSR.Name = "picSR";
             this.picSR.Size = new System.Drawing.Size(39, 31);
             this.picSR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -293,6 +297,7 @@ namespace Restaurant
             // 
             // picTB
             // 
+            this.picTB.Image = ((System.Drawing.Image)(resources.GetObject("picTB.Image")));
             this.picTB.Location = new System.Drawing.Point(95, 108);
             this.picTB.Name = "picTB";
             this.picTB.Size = new System.Drawing.Size(39, 31);
@@ -302,6 +307,7 @@ namespace Restaurant
             // 
             // pic
             // 
+            this.pic.Image = ((System.Drawing.Image)(resources.GetObject("pic.Image")));
             this.pic.Location = new System.Drawing.Point(95, 23);
             this.pic.Name = "pic";
             this.pic.Size = new System.Drawing.Size(39, 31);
@@ -329,6 +335,7 @@ namespace Restaurant
             // 
             // picCS
             // 
+            this.picCS.Image = ((System.Drawing.Image)(resources.GetObject("picCS.Image")));
             this.picCS.Location = new System.Drawing.Point(95, 325);
             this.picCS.Name = "picCS";
             this.picCS.Size = new System.Drawing.Size(39, 31);
@@ -360,6 +367,7 @@ namespace Restaurant
             this.Controls.Add(this.picCS);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
