@@ -304,5 +304,54 @@ namespace Restaurant
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Thread cc = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+
+                    //Deplacement Serveur
+                    //Axe X-
+                    Console.WriteLine("Le serveur reçoit le plat de la commande du client");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    for (int px = 0; px <= 330; px++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X - 1, picSR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+
+                    //Axe Y+
+                    for (int py = 0; py <= 90; py++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X, picSR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    //Axe Y-
+                    for (int py = 0; py <= 90; py++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X, picSR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    //Axe X+
+                    for (int px = 0; px <= 330; px++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X + 1, picSR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    Console.WriteLine("Le serveur depose la commande");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    //Axe Y-
+                    Console.WriteLine("Le serveur reprend sa position initiale");
+                    departct = 1;
+                    System.Threading.Thread.Sleep(tmps + 10);
+                    button6_Click(sender, e);
+                    
+                });
+            });
+            cc.Start(); 
+
+        }
+
     }
 }
