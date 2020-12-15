@@ -145,7 +145,7 @@ namespace Restaurant
             this.button10.TabIndex = 37;
             this.button10.Text = "Nettoyage Table";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // button8
             // 
@@ -155,7 +155,7 @@ namespace Restaurant
             this.button8.TabIndex = 36;
             this.button8.Text = "Nouvelle Nappe";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // button6
             // 
@@ -165,7 +165,7 @@ namespace Restaurant
             this.button6.TabIndex = 35;
             this.button6.Text = "Départ du Client";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // button5
             // 
@@ -175,7 +175,7 @@ namespace Restaurant
             this.button5.TabIndex = 34;
             this.button5.Text = "Début avec le serveur";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // txtTmp
             // 

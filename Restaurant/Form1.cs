@@ -6,7 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
+using Restaurant; 
+using SimpleTCP;
+using System.IO;
+using System.Threading;
 
 namespace Restaurant
 {
@@ -285,8 +289,8 @@ namespace Restaurant
             //String adip = "192.168.43.15";
             String adip = "127.0.0.1";
             String adport = "8910";
-            client2.Connect(adip, Convert.ToInt32(adport));
-            client3.Connect(adip, Convert.ToInt32(adport));
+          //  client2.Connect(adip, Convert.ToInt32(adport));
+          //  client3.Connect(adip, Convert.ToInt32(adport));
         }
 
         private void Client_DataReceived(object sender, SimpleTCP.Message e)
@@ -301,16 +305,16 @@ namespace Restaurant
             if (e.MessageString == "Nappe")
             {
                 //MessageBox.Show("Vous avez envoyé Cuisine");
-                button8_Click(ob, ev);
+                button8_Click_1(ob, ev);
             }
             if (e.MessageString == "NappeOK!!")
             {
                 //MessageBox.Show("Vous avez envoyé Cuisine");
-                button8_Click(ob, ev);
+                button10_Click_1(ob, ev);
             }
-        }
+        } 
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             Thread cc = new Thread(() =>
             {
@@ -351,15 +355,14 @@ namespace Restaurant
                     Console.WriteLine("Le serveur reprend sa position initiale");
                     departct = 1;
                     System.Threading.Thread.Sleep(tmps + 10);
-                    button6_Click(sender, e);
-                    
+                    button6_Click_1(sender, e);
+
                 });
             });
-            cc.Start(); 
-
+            cc.Start();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             Thread dpct = new Thread(() =>
             {
@@ -391,15 +394,13 @@ namespace Restaurant
                         picMH.Location = new Point(picMH.Location.X - 1, picMH.Location.Y);
                         System.Threading.Thread.Sleep(tmps);
                     }
-                    button10_Click(sender, e);
+                    button10_Click_1(sender, e);
                 });
             });
-            dpct.Start(); 
+            dpct.Start();
         }
 
-      
-
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
             Thread depotnap = new Thread(() =>
             {
@@ -434,12 +435,9 @@ namespace Restaurant
                 });
             });
             depotnap.Start();
-            
         }
 
-        
-
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click_1(object sender, EventArgs e)
         {
             Thread dpcr = new Thread(() =>
             {
