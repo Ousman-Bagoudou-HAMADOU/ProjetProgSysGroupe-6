@@ -29,6 +29,7 @@ namespace Cuisine
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -236,6 +237,7 @@ namespace Cuisine
             // 
             // Cuisiniere
             // 
+            this.Cuisiniere.Image = ((System.Drawing.Image)(resources.GetObject("Cuisiniere.Image")));
             this.Cuisiniere.Location = new System.Drawing.Point(1343, 165);
             this.Cuisiniere.Name = "Cuisiniere";
             this.Cuisiniere.Size = new System.Drawing.Size(95, 90);
@@ -245,6 +247,7 @@ namespace Cuisine
             // 
             // StockAssietteSale
             // 
+            this.StockAssietteSale.Image = ((System.Drawing.Image)(resources.GetObject("StockAssietteSale.Image")));
             this.StockAssietteSale.Location = new System.Drawing.Point(1343, 480);
             this.StockAssietteSale.Name = "StockAssietteSale";
             this.StockAssietteSale.Size = new System.Drawing.Size(95, 90);
@@ -254,6 +257,7 @@ namespace Cuisine
             // 
             // Plongeur
             // 
+            this.Plongeur.Image = ((System.Drawing.Image)(resources.GetObject("Plongeur.Image")));
             this.Plongeur.Location = new System.Drawing.Point(885, 191);
             this.Plongeur.Name = "Plongeur";
             this.Plongeur.Size = new System.Drawing.Size(95, 90);
@@ -263,6 +267,7 @@ namespace Cuisine
             // 
             // LaveLinge
             // 
+            this.LaveLinge.Image = ((System.Drawing.Image)(resources.GetObject("LaveLinge.Image")));
             this.LaveLinge.Location = new System.Drawing.Point(541, 374);
             this.LaveLinge.Name = "LaveLinge";
             this.LaveLinge.Size = new System.Drawing.Size(95, 90);
@@ -272,6 +277,7 @@ namespace Cuisine
             // 
             // StockAssiette
             // 
+            this.StockAssiette.Image = ((System.Drawing.Image)(resources.GetObject("StockAssiette.Image")));
             this.StockAssiette.Location = new System.Drawing.Point(1341, 324);
             this.StockAssiette.Name = "StockAssiette";
             this.StockAssiette.Size = new System.Drawing.Size(97, 90);
@@ -281,6 +287,7 @@ namespace Cuisine
             // 
             // StockLingeSale
             // 
+            this.StockLingeSale.Image = ((System.Drawing.Image)(resources.GetObject("StockLingeSale.Image")));
             this.StockLingeSale.Location = new System.Drawing.Point(1141, 480);
             this.StockLingeSale.Name = "StockLingeSale";
             this.StockLingeSale.Size = new System.Drawing.Size(95, 90);
@@ -290,6 +297,7 @@ namespace Cuisine
             // 
             // LaveVaisselle
             // 
+            this.LaveVaisselle.Image = ((System.Drawing.Image)(resources.GetObject("LaveVaisselle.Image")));
             this.LaveVaisselle.Location = new System.Drawing.Point(719, 201);
             this.LaveVaisselle.Name = "LaveVaisselle";
             this.LaveVaisselle.Size = new System.Drawing.Size(95, 90);
@@ -299,6 +307,7 @@ namespace Cuisine
             // 
             // StockAliment
             // 
+            this.StockAliment.Image = ((System.Drawing.Image)(resources.GetObject("StockAliment.Image")));
             this.StockAliment.Location = new System.Drawing.Point(1343, 8);
             this.StockAliment.Name = "StockAliment";
             this.StockAliment.Size = new System.Drawing.Size(95, 90);
@@ -308,6 +317,7 @@ namespace Cuisine
             // 
             // ChefPartie
             // 
+            this.ChefPartie.Image = ((System.Drawing.Image)(resources.GetObject("ChefPartie.Image")));
             this.ChefPartie.Location = new System.Drawing.Point(719, 48);
             this.ChefPartie.Name = "ChefPartie";
             this.ChefPartie.Size = new System.Drawing.Size(95, 90);
@@ -317,6 +327,7 @@ namespace Cuisine
             // 
             // CommisCuisine
             // 
+            this.CommisCuisine.Image = ((System.Drawing.Image)(resources.GetObject("CommisCuisine.Image")));
             this.CommisCuisine.Location = new System.Drawing.Point(885, 48);
             this.CommisCuisine.Name = "CommisCuisine";
             this.CommisCuisine.Size = new System.Drawing.Size(95, 90);
@@ -326,6 +337,7 @@ namespace Cuisine
             // 
             // ChefCuisine
             // 
+            this.ChefCuisine.Image = ((System.Drawing.Image)(resources.GetObject("ChefCuisine.Image")));
             this.ChefCuisine.Location = new System.Drawing.Point(511, 8);
             this.ChefCuisine.Name = "ChefCuisine";
             this.ChefCuisine.Size = new System.Drawing.Size(95, 90);
