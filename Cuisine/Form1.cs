@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; 
+using System.Windows.Forms;
+using SimpleTCP; 
+using System.IO;
+using System.Threading;
 
 namespace Cuisine
 {
@@ -36,7 +39,15 @@ namespace Cuisine
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            server = new SimpleTcpServer();
+            server.Delimiter = 0x13; //enter 
+            server.StringEncoder = Encoding.UTF8;
+            server.DataReceived += Server_DataReceived;
+            String adip = "192.168.43.217";
+            String adport = "8910";
+            //txtStatus.Text += "Server starting...";
+            System.Net.IPAddress ip = System.Net.IPAddress.Parse(adip);
+            server.Start(ip, Convert.ToInt32(adport));
         }
     }
 
@@ -129,15 +140,7 @@ namespace Cuisine
         
         private void Cuisine_Load(object sender, EventArgs e)
         {
-            server = new SimpleTcpServer();
-            server.Delimiter = 0x13; //enter 
-            server.StringEncoder = Encoding.UTF8;
-            server.DataReceived += Server_DataReceived;
-            String adip = "192.168.43.217";
-            String adport = "8910";
-            //txtStatus.Text += "Server starting...";
-            System.Net.IPAddress ip = System.Net.IPAddress.Parse(adip);
-            server.Start(ip, Convert.ToInt32(adport));
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
