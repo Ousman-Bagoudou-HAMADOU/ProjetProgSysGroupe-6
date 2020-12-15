@@ -478,5 +478,13 @@ namespace Restaurant
             dpcr.Start();
         }
 
+        public void envoinapp()
+        {
+            String dd = "Nappe";
+            //client2.WriteLine(dd);
+            client3.WriteLineAndGetReply(dd, TimeSpan.FromSeconds(1));
+            //MessageBox.Show("msg envoyé");
+        }
+
     }
 }
