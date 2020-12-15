@@ -288,5 +288,209 @@ namespace Restaurant
             client2.Connect(adip, Convert.ToInt32(adport));
             client3.Connect(adip, Convert.ToInt32(adport));
         }
+
+        private void Client_DataReceived(object sender, SimpleTCP.Message e)
+        {
+            object ob = new object();
+            EventArgs ev = new EventArgs();
+            if (e.MessageString == "Cuisine!!")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button5_Click_1(ob, ev);
+            }
+            if (e.MessageString == "Nappe")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button8_Click(ob, ev);
+            }
+            if (e.MessageString == "NappeOK!!")
+            {
+                //MessageBox.Show("Vous avez envoyé Cuisine");
+                button8_Click(ob, ev);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Thread cc = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+
+                    //Deplacement Serveur
+                    //Axe X-
+                    Console.WriteLine("Le serveur reçoit le plat de la commande du client");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    for (int px = 0; px <= 330; px++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X - 1, picSR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+
+                    //Axe Y+
+                    for (int py = 0; py <= 90; py++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X, picSR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    //Axe Y-
+                    for (int py = 0; py <= 90; py++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X, picSR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    //Axe X+
+                    for (int px = 0; px <= 330; px++)
+                    {
+                        picSR.Location = new Point(picSR.Location.X + 1, picSR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    Console.WriteLine("Le serveur depose la commande");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    //Axe Y-
+                    Console.WriteLine("Le serveur reprend sa position initiale");
+                    departct = 1;
+                    System.Threading.Thread.Sleep(tmps + 10);
+                    button6_Click(sender, e);
+                    
+                });
+            });
+            cc.Start(); 
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Thread dpct = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+
+                    Console.WriteLine("Départ du client");
+                    System.Threading.Thread.Sleep(tmps + tmpajt);
+                    //Axe Y-
+                    for (int py = 0; py <= 60; py++)
+                    {
+                        pic.Location = new Point(pic.Location.X, pic.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+
+                    //Axe X-
+                    for (int px = 0; px <= 245; px++)
+                    {
+                        pic.Location = new Point(pic.Location.X - 1, pic.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int px = 0; px <= 80; px++)
+                    {
+                        picMH.Location = new Point(picMH.Location.X + 1, picMH.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int px = 0; px <= 80; px++)
+                    {
+                        picMH.Location = new Point(picMH.Location.X - 1, picMH.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    button10_Click(sender, e);
+                });
+            });
+            dpct.Start(); 
+        }
+
+      
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Thread depotnap = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+                    for (int p = 0; p <= 150; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 170; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 35; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 160; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 133; p++)
+                    {
+
+                        picCR.Location = new Point(picCR.Location.X - 1, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                });
+            });
+            depotnap.Start();
+            
+        }
+
+        
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Thread dpcr = new Thread(() =>
+            {
+                this.BeginInvoke((Action)delegate ()
+                {
+                    for (int p = 0; p <= 133; p++)
+                    {
+                        pic.Location = new Point(pic.Location.X - 1, pic.Location.Y - 1);
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 78; p++)
+                    {
+
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y - 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 75; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 35; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 170; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y + 1);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    for (int p = 0; p <= 150; p++)
+                    {
+                        picCR.Location = new Point(picCR.Location.X + 1, picCR.Location.Y);
+                        System.Threading.Thread.Sleep(tmps);
+                    }
+                    envoinapp();
+
+                });
+            });
+            dpcr.Start();
+        }
+
+        public void envoinapp()
+        {
+            String dd = "Nappe";
+            //client2.WriteLine(dd);
+            client3.WriteLineAndGetReply(dd, TimeSpan.FromSeconds(1));
+            //MessageBox.Show("msg envoyé");
+        }
+
     }
 }
