@@ -12,6 +12,8 @@ namespace Cuisine
 {
     public partial class Form1 : Form
     {
+        int tmp=0;
+        int np=0;
         public Form1()
         {
             InitializeComponent();
@@ -22,4 +24,6 @@ namespace Cuisine
 
         }
     }
+
+
 }
