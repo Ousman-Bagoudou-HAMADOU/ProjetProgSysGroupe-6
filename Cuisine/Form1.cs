@@ -311,6 +311,7 @@ namespace Cuisine
             cc.Start();
         }
     }
+      
 
     private void Server_DataReceived(object sender, SimpleTCP.Message e)
         {
@@ -383,13 +384,7 @@ namespace Cuisine
                 if (np == 2)
                 {
                     nnp.Abort();
-                }
-                //MessageBox.Show("Vous avez envoyé La  du client");
-                //txtStatus.Text += e.MessageString;
-
-                //e.ReplyLine(string.Format("Cuisine!!"));
-
-
+                } 
             }
             else
             {
